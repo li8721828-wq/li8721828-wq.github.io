@@ -2,59 +2,59 @@ import { defineConfig } from "tinacms";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
-  process.env.GITHUB_BRANCH ||
-  process.env.VERCEL_GIT_COMMIT_REF ||
-  process.env.HEAD ||
-  "main";
+	process.env.GITHUB_BRANCH ||
+	process.env.VERCEL_GIT_COMMIT_REF ||
+	process.env.HEAD ||
+	"main";
 
 export default defineConfig({
-  branch,
+	branch,
 
-  // Get this from tina.io
-  clientId: "4aa38ef9-f667-44fc-8bd2-204198a5ce5c",
-  // Get this from tina.io
-  token: "b7e2ff1c7998d17a1d69e5832b69b7d06ce73364",
-  //123
+	// Get this from tina.io
+	clientId: "4aa38ef9-f667-44fc-8bd2-204198a5ce5c",
+	// Get this from tina.io
+	token: "4152dcaf03f8d027ff9f93108da70f0e6b1ab662",
+	//123
 
-  build: {
-    outputFolder: "admin",
-    publicFolder: "public",
-  },
-  // Uncomment to allow cross-origin requests from non-localhost origins
-  // during local development (e.g. GitHub Codespaces, Gitpod, Docker).
-  // Use 'private' to allow all private-network IPs (WSL2, Docker, etc.)
-  // server: {
-  //   allowedOrigins: ['https://your-codespace.github.dev'],
-  // },
-  media: {
-    tina: {
-      mediaRoot: "",
-      publicFolder: "public",
-    },
-  },
-  // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/r/content-modelling-collections/
-  schema: {
-    collections: [
-      {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
-        fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
-          },
-        ],
-      },
-    ],
-  },
+	build: {
+		outputFolder: "admin",
+		publicFolder: "public",
+	},
+	// Uncomment to allow cross-origin requests from non-localhost origins
+	// during local development (e.g. GitHub Codespaces, Gitpod, Docker).
+	// Use 'private' to allow all private-network IPs (WSL2, Docker, etc.)
+	// server: {
+	//   allowedOrigins: ['https://your-codespace.github.dev'],
+	// },
+	media: {
+		tina: {
+			mediaRoot: "",
+			publicFolder: "public",
+		},
+	},
+	// See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/r/content-modelling-collections/
+	schema: {
+		collections: [
+			{
+				name: "post",
+				label: "Posts",
+				path: "content/posts",
+				fields: [
+					{
+						type: "string",
+						name: "title",
+						label: "Title",
+						isTitle: true,
+						required: true,
+					},
+					{
+						type: "rich-text",
+						name: "body",
+						label: "Body",
+						isBody: true,
+					},
+				],
+			},
+		],
+	},
 });
