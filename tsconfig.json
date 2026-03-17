@@ -1,10 +1,8 @@
 {
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
-    "skipLibCheck": true,
-    "strict": false,
-    "strictNullChecks": false,
     "baseUrl": ".",
+    "skipLibCheck": true,
     "paths": {
       "@/*": ["src/*"],
       "@assets/*": ["src/assets/*"],
@@ -13,7 +11,8 @@
       "@layouts/*": ["src/layouts/*"],
       "@plugins/*": ["src/plugins/*"],
       "@utils/*": ["src/utils/*"],
-      "@config": ["src/config.ts"]
+      "@config": ["src/config.ts"],
+      "@i18n/*": ["src/i18n/*"]
     }
   }
 }
